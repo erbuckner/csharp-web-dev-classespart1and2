@@ -31,8 +31,10 @@ namespace SchoolPractice
         public void AddGrade(int courseCredits, double grade)
         {
             // Update the appropriate properties: NumberOfCredits, Gpa
+            double totalQuality = (this.Gpa * this.NumberOfCredits) + (grade * courseCredits);
             this.NumberOfCredits += courseCredits;
-            this.Gpa += grade;
+            this.Gpa = Math.Round(totalQuality / this.NumberOfCredits, 2);
+
 
         }
 

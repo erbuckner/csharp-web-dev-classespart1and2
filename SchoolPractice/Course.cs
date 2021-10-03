@@ -41,5 +41,6 @@ namespace SchoolPractice
             Course s = toBeCompared as Course;
             return s.Topic == Topic;
         }
+
     }
 }

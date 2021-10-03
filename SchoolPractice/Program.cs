@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SchoolPractice
 {
@@ -9,9 +10,8 @@ namespace SchoolPractice
             // TODO: Test your exercise solutions with print statements here.
             //Test #1: exercises in Student class - toString(), GetGradeLevel(), and AddGrade()
            
-            Student testStudent = new Student("Erin");
+            Student testStudent = new Student("Erin", 001, 29, 3.2);
 
-            testStudent.NumberOfCredits = 52;
             string gradeLevel = testStudent.GetGradeLevel(testStudent.NumberOfCredits);
 
             //toString()
@@ -25,6 +25,18 @@ namespace SchoolPractice
             Console.WriteLine(gradeLevel);
 
             //Test #2: exercises in Course class
+            Course testCourse = new Course();
+            testCourse.Topic = "Intro to Alchemy";
+            testCourse.Instructor = new Teacher("James", "Anderson", "Introductory Topics", 7);
+            testCourse.enrolledStudents = new List<Student>
+                {
+                    new Student("Jasper"),
+                    new Student("Megan"),
+                    new Student("Elliot")
+                };
+
+
+            Console.WriteLine(testCourse.ToString());
 
         }
     }
